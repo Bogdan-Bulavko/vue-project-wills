@@ -3,7 +3,7 @@
 <template>
   <nav>
     <ul
-      class="flex gap-5 flex-wrap min-[320px]:w-60 min-[625px]:w-87 max-[650px]:mt-5 min-[768px]:w-100 min-[900px]:w-full"
+      class="flex gap-5 flex-wrap min-[320px]:w-60 min-[320px]:justify-center min-[625px]:w-87 max-[650px]:mt-5 min-[768px]:w-100 min-[900px]:w-full"
     >
       <li class="cursor-pointer transition duration-400 focus:bg-white hover:translate-x-2">
         <a
