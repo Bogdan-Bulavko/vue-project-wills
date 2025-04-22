@@ -1,1 +1,5 @@
 @import './base.css';
+
+body {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b, #ffcc99, #ffe6cc, #fff8e7);
+}
