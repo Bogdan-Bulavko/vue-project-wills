@@ -3,11 +3,13 @@ import NavigationMenu from './NavigationMenu.vue'
 </script>
 
 <template>
+    <!--посмотрите на tailwind.config.js -->
   <header
-    class="flex justify-between items-center py-10 px-10 rounded-t-4xl min-[320px]:flex-col min-[650px]:flex-row"
+    class="flex w-full justify-between items-center p-10 rounded-t-4xl xs:flex-col sm:flex-row"
   >
     <div class="flex items-center">
-      <div class="w-[80px] h-[80px] mr-2.5">
+      <!--посмотрите на tailwind.config.js -->
+      <div class="w-20 h-20 mr-2.5">
         <img src="/logo.jpeg" class="rounded-[50px]" alt="logo Me" />
       </div>
       <div>
