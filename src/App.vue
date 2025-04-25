@@ -4,7 +4,7 @@ import HomePage from './components/HomePage.vue'
 
 <template>
   <!--посмотрите на tailwind.config.js -->
-  <div class="max-w-[1720px] sm:w-screen m-auto text-[#716e79]">
+  <div class="max-w-[1720px] sm:w-screen m-auto text-gray">
     <HomePage />
   </div>
 </template>

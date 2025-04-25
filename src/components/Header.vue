@@ -12,31 +12,25 @@ const changeCheckedOpenMenu = (): void => {
 <template>
   <!--посмотрите на tailwind.config.js -->
   <header
-    class="flex w-full justify-between items-center p-10 rounded-t-4xl xs:flex-col sm:flex-row"
+    class="flex w-full justify-between items-center p-10 max-xsm:p-5 rounded-t-4xl xs:flex-col sm:flex-row"
   >
     <div class="flex items-center">
-      <div class="w-[80px] h-[80px] mr-2.5">
+      <div class="flex items-center w-[80px] h-[80px] mr-2.5">
         <img src="/logo2.png" class="rounded-[50px]" alt="logo Me" />
       </div>
       <div class="mr-2.5">
         <h2 class="text-2xl font-medium text-black">Богдан</h2>
-        <p>Фронтенд-разработчик</p>
+        <p class="">Фронтенд-разработчик</p>
       </div>
 
-      <div
-        class="text-center hidden max-[650px]:block cursor-pointer"
-        @click="changeCheckedOpenMenu"
-      >
+      <div class="text-center hidden max-sm:block cursor-pointer" @click="changeCheckedOpenMenu">
         <img src="/icons/menu.png" alt="menu" class="w-[20px] inline" />
       </div>
     </div>
 
     <div class="flex items-center">
       <NavigationMenu :openMenu="openMenu" />
-      <div
-        class="text-center block max-[650px]:hidden cursor-pointer"
-        @click="changeCheckedOpenMenu"
-      >
+      <div class="text-center block max-sm:hidden cursor-pointer" @click="changeCheckedOpenMenu">
         <img src="/icons/menu.png" alt="menu" class="w-[20px] inline" />
       </div>
     </div>
