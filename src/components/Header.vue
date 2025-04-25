@@ -1,23 +1,45 @@
 <script setup lang="ts">
 import NavigationMenu from './NavigationMenu.vue'
+
+import { ref } from 'vue'
+import type { Ref } from 'vue'
+const openMenu: Ref<boolean> = ref(false)
+const changeCheckedOpenMenu = (): void => {
+  openMenu.value = !openMenu.value
+}
 </script>
 
 <template>
-    <!--посмотрите на tailwind.config.js -->
+  <!--посмотрите на tailwind.config.js -->
   <header
     class="flex w-full justify-between items-center p-10 rounded-t-4xl xs:flex-col sm:flex-row"
   >
     <div class="flex items-center">
-      <!--посмотрите на tailwind.config.js -->
-      <div class="w-20 h-20 mr-2.5">
-        <img src="/logo.jpeg" class="rounded-[50px]" alt="logo Me" />
+      <div class="w-[80px] h-[80px] mr-2.5">
+        <img src="/logo2.png" class="rounded-[50px]" alt="logo Me" />
       </div>
-      <div>
+      <div class="mr-2.5">
         <h2 class="text-2xl font-medium text-black">Богдан</h2>
-        <p>Веб-разработчик</p>
+        <p>Фронтенд-разработчик</p>
+      </div>
+
+      <div
+        class="text-center hidden max-[650px]:block cursor-pointer"
+        @click="changeCheckedOpenMenu"
+      >
+        <img src="/icons/menu.png" alt="menu" class="w-[20px] inline" />
       </div>
     </div>
-    <NavigationMenu />
+
+    <div class="flex items-center">
+      <NavigationMenu :openMenu="openMenu" />
+      <div
+        class="text-center block max-[650px]:hidden cursor-pointer"
+        @click="changeCheckedOpenMenu"
+      >
+        <img src="/icons/menu.png" alt="menu" class="w-[20px] inline" />
+      </div>
+    </div>
   </header>
 </template>
 
