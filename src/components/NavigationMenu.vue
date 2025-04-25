@@ -45,7 +45,7 @@ defineProps({ openMenu: Boolean })
           >
         </li>
         <li
-          class="cursor-pointer transition bg-white duration-400 rounded-2xl hover:bg-[#ff7e5f] hover:text-white"
+          class="cursor-pointer transition bg-accent duration-400 rounded-2xl hover:bg-[#ff7e5f] hover:text-white"
         >
           <button class="p-2.5">Войти</button>
         </li>
