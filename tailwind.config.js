@@ -16,14 +16,6 @@ export default {
       xl: '1280px',
       '2xl': '1536px',
       '3xl': '1720px',
-
-      'max-xs': { max: '320px' },
-      'max-xsm': { max: '425px' },
-      'max-sm': { max: '640px' },
-      'max-md': { max: '768px' },
-      'max-lg': { max: '1024px' },
-      'max-xl': { max: '1280px' },
-      'max-2xl': { max: '1536px' },
     },
     extend: {
       spacing: {
@@ -52,9 +44,10 @@ export default {
         accent: '#2196F3', // Синий
         dark: '#212121', // Темно-серый
         light: '#FAFAFA', // Светло-серый
-        peach: '#ff7e5f',
+        peach: '#FF6525',
+        peach2: '#FFD9C9',
       },
-      background: {
+      backgroundImage: {
         'background-color-body':
           'linear-gradient(135deg, #ff7e5f, #feb47b, #ffcc99, #ffe6cc, #fff8e7)',
       },
