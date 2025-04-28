@@ -1,14 +1,14 @@
 <script setup lang="ts">
-defineProps({ openMenu: Boolean })
+defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function })
 </script>
 
 <template>
-  <nav class="overflow-hidden mr-2.5">
-    <Transition>
-      <ul
-        class="flex gap-x-5 flex-wrap xs:w-60 xs:justify-center xsm:w-87 max-sm:mt-5 md:w-100 lg:w-full"
-        v-if="openMenu"
-      >
+  <Transition>
+    <nav
+      class="max-sm:h-[145px] sm:mr-2.5 z-10 max-sm:absolute max-sm:top-0 max-sm:left-0 max-sm:bg-white max-sm:rounded-t-4xl max-sm:w-full relative"
+      v-if="openMenu"
+    >
+      <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-5">
         <li class="li-item-nav">
           <a href="#" class="a-li-item-nav"
             ><img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная</a
@@ -40,8 +40,14 @@ defineProps({ openMenu: Boolean })
           <button class="p-2.5">Войти</button>
         </li>
       </ul>
-    </Transition>
-  </nav>
+      <div
+        class="absolute top-0 right-4 text-center cursor-pointer hidden max-sm:block"
+        @click="changeCheckedOpenMenu"
+      >
+        <img src="/icons/cancel.png" alt="menu" class="w-[20px] inline" />
+      </div>
+    </nav>
+  </Transition>
 </template>
 
 <style scoped>
@@ -53,7 +59,7 @@ defineProps({ openMenu: Boolean })
 
 .v-enter-from,
 .v-leave-to {
-  transform: translateX(650px);
+  transform: translateX(665px);
   transition: 1s;
 }
 </style>
