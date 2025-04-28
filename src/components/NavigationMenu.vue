@@ -5,7 +5,7 @@ defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function })
 <template>
   <Transition>
     <nav
-      class="max-sm:h-[145px] sm:mr-2.5 z-10 max-sm:absolute max-sm:top-0 max-sm:left-0 max-sm:bg-white max-sm:rounded-t-4xl max-sm:w-full relative"
+      class="relative max-sm:h-[145px] sm:mr-2.5 z-10 max-sm:absolute max-sm:top-0 max-sm:left-0 max-sm:bg-white max-sm:rounded-t-4xl sm:w-[320px] md:w-100 lg:w-full"
       v-if="openMenu"
     >
       <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-5">
