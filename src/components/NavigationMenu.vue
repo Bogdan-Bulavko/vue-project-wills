@@ -8,7 +8,7 @@ defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function })
       class="relative max-sm:h-[145px] sm:mr-2.5 z-10 max-sm:absolute max-sm:top-0 max-sm:left-0 max-sm:bg-white max-sm:rounded-t-4xl sm:w-[320px] md:w-100 lg:w-full"
       v-if="openMenu"
     >
-      <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-5">
+      <ul class="flex gap-x-5 flex-wrap xs:justify-center min-[350px]:mt-5">
         <li class="li-item-nav">
           <a href="#" class="a-li-item-nav"
             ><img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная</a
