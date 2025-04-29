@@ -1,8 +1,12 @@
 <script setup lang="ts">
-import NavigationMenu from './NavigationMenu.vue'
-
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+
+import NavigationMenu from './NavigationMenu.vue'
+
+defineProps({
+  chooseActiveBlock: Function,
+})
 const openMenu: Ref<boolean> = ref(false)
 const changeCheckedOpenMenu = (): void => {
   openMenu.value = !openMenu.value
@@ -12,7 +16,7 @@ const changeCheckedOpenMenu = (): void => {
 <template>
   <!--посмотрите на tailwind.config.js -->
   <header
-    class="flex w-full justify-between items-center rounded-t-4xl border-white border-x-2 border-y-2 p-10 max-xsm:p-5 max-sm:relative"
+    class="flex w-full justify-between items-center rounded-t-4xl border-white border-x-2 border-y-2 p-10 max-sm:p-5 max-sm:relative"
   >
     <div class="flex items-center">
       <div class="flex items-center w-[80px] h-[80px] mr-2.5">
@@ -26,7 +30,11 @@ const changeCheckedOpenMenu = (): void => {
 
     <div class="flex items-center">
       <div class="overflow-hidden">
-        <NavigationMenu :openMenu="openMenu" :changeCheckedOpenMenu="changeCheckedOpenMenu" />
+        <NavigationMenu
+          :openMenu="openMenu"
+          :changeCheckedOpenMenu="changeCheckedOpenMenu"
+          :chooseActiveBlock="chooseActiveBlock"
+        />
       </div>
       <div class="text-center cursor-pointer" @click="changeCheckedOpenMenu">
         <img src="/icons/menu.png" alt="menu" class="w-[20px]" />

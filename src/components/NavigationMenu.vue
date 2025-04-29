@@ -1,5 +1,5 @@
 <script setup lang="ts">
-defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function })
+defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function, chooseActiveBlock: Function })
 </script>
 
 <template>
@@ -9,12 +9,12 @@ defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function })
       v-if="openMenu"
     >
       <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
-        <li class="li-item-nav">
+        <li class="li-item-nav" id="home" @click="chooseActiveBlock">
           <a href="#" class="a-li-item-nav"
             ><img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная</a
           >
         </li>
-        <li class="li-item-nav">
+        <li class="li-item-nav" id="about" @click="chooseActiveBlock">
           <a href="#" class="a-li-item-nav"
             ><img src="/icons/location.png" alt="location" class="w-[20px] inline" /> Обо мне</a
           >
