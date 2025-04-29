@@ -18,13 +18,15 @@ import Header from './Header.vue'
         Я Булавко Богдан, Фронтенд-разработчик из Роcсии. У меня хороший опыт в разработке, создании
         и настройке веб-сайтов.
       </p>
-      <div class="max-w-[320px] flex justify-around">
-        <button
-          class="p-4 text-base font-semibold cursor-pointer rounded-3xl bg-peach text-peach2 duration-400 hover:px-6"
+      <div class="max-w-[330px] flex justify-around">
+        <a
+          href="#"
+          class="text-center p-4 text-base font-semibold cursor-pointer rounded-3xl bg-peach text-peach2 duration-400 hover:px-6 focus:bg-white focus:text-peach"
         >
           Мои Контакты
-        </button>
-        <button class="p-4 text-base font-semibold cursor-pointer rounded-3xl">Мои Работы</button>
+        </a>
+        <a href="#" class="text-center flex items-center gap-1 w-[160px] p-4 text-base font-semibold cursor-pointer rounded-3xl"
+          ><span class="hover:mr-2 duration-500">Мои Работы</span> <span class="text-lg">&#9658</span></a>
       </div>
     </div>
   </section>
