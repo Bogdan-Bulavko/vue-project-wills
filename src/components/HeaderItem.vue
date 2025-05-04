@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
-
+import type { PropType } from 'vue'
 import NavigationMenu from './NavigationMenu.vue'
 
 defineProps({
-  chooseActiveBlock: Function,
+  chooseActiveBlock: {
+    type: Function as PropType<(e: MouseEvent) => void>,
+    required: true,
+  }
 })
+
 const openMenu: Ref<boolean> = ref(false)
 const changeCheckedOpenMenu = (): void => {
   openMenu.value = !openMenu.value
@@ -14,7 +18,6 @@ const changeCheckedOpenMenu = (): void => {
 </script>
 
 <template>
-  <!--посмотрите на tailwind.config.js -->
   <header
     class="flex w-full justify-between items-center rounded-t-4xl border-white border-x-2 border-y-2 p-10 max-sm:p-5 max-sm:relative"
   >

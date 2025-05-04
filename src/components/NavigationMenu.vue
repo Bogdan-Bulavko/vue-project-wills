@@ -1,5 +1,17 @@
 <script setup lang="ts">
-defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function, chooseActiveBlock: Function })
+import type { PropType } from 'vue'
+
+defineProps({
+  openMenu: Boolean,
+  changeCheckedOpenMenu: {
+    type: Function as PropType<(e: MouseEvent) => void>,
+    required: true
+  },
+  chooseActiveBlock: {
+    type: Function as PropType<(e: MouseEvent) => void>,
+    required: true
+  }
+})
 </script>
 
 <template>
@@ -9,30 +21,38 @@ defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function, chooseActiveBl
       v-if="openMenu"
     >
       <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
-        <li class="li-item-nav" id="home" @click="chooseActiveBlock">
-          <a href="#" class="a-li-item-nav"
-            ><img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная</a
-          >
+        <li
+          class="li-item-nav"
+          id="home"
+          @click="(e) => chooseActiveBlock(e)"
+        >
+          <a href="#" class="a-li-item-nav">
+            <img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная
+          </a>
         </li>
-        <li class="li-item-nav" id="about" @click="chooseActiveBlock">
-          <a href="#" class="a-li-item-nav"
-            ><img src="/icons/location.png" alt="location" class="w-[20px] inline" /> Обо мне</a
-          >
-        </li>
-        <li class="li-item-nav">
-          <a href="#" class="a-li-item-nav"
-            ><img src="/icons/suitcase.png" alt="suitcase" class="w-[20px] inline" /> Опыт</a
-          >
-        </li>
-        <li class="li-item-nav">
-          <a href="#" class="a-li-item-nav"
-            ><img src="/icons/wrench.png" alt="wrench" class="w-[20px] inline" /> Стэк</a
-          >
+        <li
+          class="li-item-nav"
+          id="about"
+          @click="(e) => chooseActiveBlock(e)"
+        >
+          <a href="#" class="a-li-item-nav">
+            <img src="/icons/location.png" alt="location" class="w-[20px] inline" /> Обо мне
+          </a>
         </li>
         <li class="li-item-nav">
-          <a href="#" class="a-li-item-nav"
-            ><img src="/icons/agenda.png" alt="agenda" class="w-[20px] inline" /> Контакты</a
-          >
+          <a href="#" class="a-li-item-nav">
+            <img src="/icons/suitcase.png" alt="suitcase" class="w-[20px] inline" /> Опыт
+          </a>
+        </li>
+        <li class="li-item-nav">
+          <a href="#" class="a-li-item-nav">
+            <img src="/icons/wrench.png" alt="wrench" class="w-[20px] inline" /> Стэк
+          </a>
+        </li>
+        <li class="li-item-nav">
+          <a href="#" class="a-li-item-nav">
+            <img src="/icons/agenda.png" alt="agenda" class="w-[20px] inline" /> Контакты
+          </a>
         </li>
         <li class="li-item-nav">
           <a href="#" class="a-li-item-nav">Войти</a>
@@ -40,7 +60,7 @@ defineProps({ openMenu: Boolean, changeCheckedOpenMenu: Function, chooseActiveBl
       </ul>
       <div
         class="absolute top-0 right-4 text-center cursor-pointer hidden max-sm:block"
-        @click="changeCheckedOpenMenu"
+        @click="(e) => changeCheckedOpenMenu(e)"
       >
         <img src="/icons/cancel.png" alt="menu" class="w-[20px] inline" />
       </div>
