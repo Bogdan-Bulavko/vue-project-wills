@@ -22,7 +22,7 @@ defineProps({
   >
     <nav
       v-if="openMenu"
-      class="/* Layout */ relative max-sm:h-full max-sm:absolute max-sm:top-0 max-sm:left-0 sm:mr-2.5 sm:w-[320px] md:w-100 lg:w-full max-sm:rounded-t-4xl max-sm:bg-white"
+      class="/* Layout */ relative max-sm:h-full max-sm:absolute max-sm:top-0 max-sm:left-0 sm:mr-2.5 sm:w-[320px] md:w-100 lg:w-full max-sm:rounded-t-4xl max-sm:bg-white /* Border */ md:border-r-2 md:border-white"
     >
       <ul class="/* Layout */ flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
         <li class="li-item-nav" id="home" @click="(e) => chooseActiveBlock(e)">

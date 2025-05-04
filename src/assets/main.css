@@ -8,7 +8,7 @@ body {
 /* HomePage */
 
 .section-home-page {
-  @apply w-full absolute top-0 left-0 p-10 max-xsm:p-5;
+  @apply w-full absolute top-0 left-0 p-10  max-xsm:p-5;
 }
 
 .img-me-section {

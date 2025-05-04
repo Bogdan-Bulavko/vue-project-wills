@@ -25,10 +25,11 @@ const chooseActiveBlock = (e: Event): void => {
     >
       <section
         v-if="activeBlock === 'home'"
-        class="/* Layout */ section-home-page flex gap-10 items-center justify-center max-sm:flex-col"
+        class="/* Layout */ section-home-page flex justify-center items-center max-sm:flex-col"
       >
-        <img class="img-me-section" src="/logo.jpeg" alt="logo" />
-        <div>
+        <img class="img-me-section sm:mr-5 md:mr-10" src="/logo.jpeg" alt="logo" />
+
+        <div class="/* Layout */ sm:pl-5 md:pl-10 /* Border */ sm:border-l-2 sm:border-white">
           <div class="flex gap-3 items-center mb-5">
             <img src="/hello.png" alt="hello" />
             <h2 class="text-black text-2xl">HELLO</h2>
@@ -49,7 +50,7 @@ const chooseActiveBlock = (e: Event): void => {
               class="/* Layout */ p-4 rounded-3xl flex items-center gap-1 w-[160px] cursor-pointer /* Typography */ text-base font-semibold text-center"
             >
               <span class="hover:mr-2 duration-500">Мои Работы</span>
-              <span class="text-lg"></span>
+              <img class="w-[22px]" src="/arrows.png" alt="" />
             </a>
           </div>
         </div>
@@ -69,10 +70,13 @@ const chooseActiveBlock = (e: Event): void => {
           <img class="w-[20px] mr-2 pb-2 inline-block" src="/icons/location.png" alt="location" />
           <h2 class="inline-block text-black text-2xl font-medium">Обо мне</h2>
         </div>
-        <div class="flex gap-10 justify-around items-center max-md:flex-col">
-          <img class="img-me-section" src="/logo.jpeg" alt="logo" />
-          <div>
-            <div class="/* Layout */ bg-text-home /* Border */ border-2 border-peach2">
+        <div class="flex items-center justify-center max-md:flex-col max-md:gap-5">
+          <img class="img-me-section sm:mr-5 md:mr-10" src="/logo.jpeg" alt="logo" />
+
+          <div
+            class="/* Layout */ max-w-[590px] sm:pl-5 md:pl-10 /* Border */ md:border-l-2 md:border-white"
+          >
+            <div class="/* Layout */ bg-text-home mb-5 /* Border */ border-2 border-peach2">
               <p class="text-lg">
                 Я Булавко Богдан, Фронтенд-разработчик из Роcсии. У меня хороший опыт в разработке,
                 создании и настройке веб-сайтов. Я с удовольствием поговорю с вами о вашем проекте.

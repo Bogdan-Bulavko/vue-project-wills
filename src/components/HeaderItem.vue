@@ -39,7 +39,7 @@ const changeCheckedOpenMenu = (): void => {
           :chooseActiveBlock="chooseActiveBlock"
         />
       </div>
-      <div class="text-center cursor-pointer" @click="changeCheckedOpenMenu">
+      <div class="text-center cursor-pointer pl-5" @click="changeCheckedOpenMenu">
         <img src="/icons/menu.png" alt="menu" class="w-[20px]" />
       </div>
     </div>
