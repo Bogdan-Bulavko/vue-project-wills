@@ -45,11 +45,12 @@ export default {
         dark: '#212121', // Темно-серый
         light: '#FAFAFA', // Светло-серый
         peach: '#FF6525',
-        peach2: '#FFD9C9',
+        peach2: '#ffd9c9',
       },
       backgroundImage: {
         'background-color-body':
           'linear-gradient(135deg, #ff7e5f, #feb47b, #ffcc99, #ffe6cc, #fff8e7)',
+        'background-gray50': '#ffffff80',
       },
     },
   },

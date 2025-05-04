@@ -5,36 +5,32 @@ defineProps({
   openMenu: Boolean,
   changeCheckedOpenMenu: {
     type: Function as PropType<(e: MouseEvent) => void>,
-    required: true
+    required: true,
   },
   chooseActiveBlock: {
     type: Function as PropType<(e: MouseEvent) => void>,
-    required: true
-  }
+    required: true,
+  },
 })
 </script>
-
 <template>
-  <Transition>
+  <Transition
+    enter-from-class="transform-gpu transition-transform duration-1000 -translate-x-[-665px]"
+    enter-to-class="transform-gpu transition-transform duration-1000 translate-x-0"
+    leave-active-class="transform-gpu transition-transform duration-1000 translate-x-0"
+    leave-to-class="transform-gpu transition-transform duration-1000 translate-x-[665px]"
+  >
     <nav
-      class="relative max-sm:h-full sm:mr-2.5 z-10 max-sm:absolute max-sm:top-0 max-sm:left-0 max-sm:bg-white max-sm:rounded-t-4xl sm:w-[320px] md:w-100 lg:w-full"
       v-if="openMenu"
+      class="/* Layout */ relative max-sm:h-full max-sm:absolute max-sm:top-0 max-sm:left-0 sm:mr-2.5 sm:w-[320px] md:w-100 lg:w-full max-sm:rounded-t-4xl max-sm:bg-white"
     >
-      <ul class="flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
-        <li
-          class="li-item-nav"
-          id="home"
-          @click="(e) => chooseActiveBlock(e)"
-        >
+      <ul class="/* Layout */ flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
+        <li class="li-item-nav" id="home" @click="(e) => chooseActiveBlock(e)">
           <a href="#" class="a-li-item-nav">
             <img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная
           </a>
         </li>
-        <li
-          class="li-item-nav"
-          id="about"
-          @click="(e) => chooseActiveBlock(e)"
-        >
+        <li class="li-item-nav" id="about" @click="(e) => chooseActiveBlock(e)">
           <a href="#" class="a-li-item-nav">
             <img src="/icons/location.png" alt="location" class="w-[20px] inline" /> Обо мне
           </a>
@@ -59,7 +55,7 @@ defineProps({
         </li>
       </ul>
       <div
-        class="absolute top-0 right-4 text-center cursor-pointer hidden max-sm:block"
+        class="/* Layout */ absolute top-0 right-4 text-center cursor-pointer hidden max-sm:block"
         @click="(e) => changeCheckedOpenMenu(e)"
       >
         <img src="/icons/cancel.png" alt="menu" class="w-[20px] inline" />
@@ -67,17 +63,3 @@ defineProps({
     </nav>
   </Transition>
 </template>
-
-<style scoped>
-.v-enter-active,
-.v-leave-active {
-  transform: translatex(0);
-  transition: 1s;
-}
-
-.v-enter-from,
-.v-leave-to {
-  transform: translateX(665px);
-  transition: 1s;
-}
-</style>

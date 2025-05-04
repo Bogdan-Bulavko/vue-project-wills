@@ -8,7 +8,7 @@ defineProps({
   chooseActiveBlock: {
     type: Function as PropType<(e: MouseEvent) => void>,
     required: true,
-  }
+  },
 })
 
 const openMenu: Ref<boolean> = ref(false)
@@ -19,7 +19,7 @@ const changeCheckedOpenMenu = (): void => {
 
 <template>
   <header
-    class="flex w-full justify-between items-center rounded-t-4xl border-white border-x-2 border-y-2 p-10 max-sm:p-5 max-sm:relative"
+    class="/* Layout */ flex w-full justify-between items-center p-10 max-sm:p-5 max-sm:relative rounded-t-4xl /* Border */ border-x-2 border-y-2 border-white /* Background */ bg-[#ffffff80]"
   >
     <div class="flex items-center">
       <div class="flex items-center w-[80px] h-[80px] mr-2.5">
@@ -45,9 +45,3 @@ const changeCheckedOpenMenu = (): void => {
     </div>
   </header>
 </template>
-
-<style scoped>
-header {
-  background: rgba(255, 255, 255, 0.5);
-}
-</style>

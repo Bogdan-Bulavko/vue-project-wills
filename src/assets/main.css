@@ -5,6 +5,26 @@ body {
   background: linear-gradient(135deg, #ff7e5f, #feb47b, #ffcc99, #ffe6cc, #fff8e7);
 }
 
+/* HomePage */
+
+.section-home-page {
+  @apply w-full absolute top-0 left-0 p-10 max-xsm:p-5;
+}
+
+.img-me-section {
+  @apply rounded-4xl border-white border-2;
+}
+
+.bg-text-home {
+  @apply p-5 bg-white rounded-4xl;
+}
+
+.flex-info-text {
+  @apply flex justify-between gap-10;
+}
+
+/* NavigationMenu */
+
 .li-item-nav {
   @apply cursor-pointer transition duration-400 focus:bg-white hover:translate-x-2;
 }
