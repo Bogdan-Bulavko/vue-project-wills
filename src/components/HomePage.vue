@@ -37,16 +37,18 @@ const chooseActiveBlock = (e: Event): void => {
     >
       <section
         v-if="activeBlock === 'home'"
-        class="/* Layout */ section-home-page flex justify-center items-center max-sm:flex-col"
+        class="/* Layout */ section-home-page flex justify-between items-center max-sm:flex-col"
       >
-        <img class="img-me-section sm:mr-5 md:mr-10" src="/logo.jpeg" alt="logo" />
-
-        <div class="/* Layout */ sm:pl-5 md:pl-10 /* Border */ sm:border-l-2 sm:border-white">
-          <div class="flex gap-3 items-center mb-5">
+      <!--https://tailwindcss.com/docs/flex-basis-->
+      <div class="basis-2/5">
+        <img class="img-me-section" src="/logo.jpeg" alt="logo" />
+      </div >
+        <div class="basis-3/5 sm:border-l-2 pl-8 sm:border-white">
+          <div class="flex  items-center ">
             <img src="/hello.png" alt="hello" />
-            <h2 class="text-black text-2xl">HELLO</h2>
+            <h2 class="text-black text-4xl">HELLO</h2>
           </div>
-          <p class="mb-5 max-w-96 text-lg">
+          <p class="mb-5 pt-2 max-w-168 text-xl text-balance ">
             Я Булавко Богдан, Фронтенд-разработчик из Роcсии. У меня хороший опыт в разработке,
             создании и настройке веб-сайтов.
           </p>
