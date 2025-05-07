@@ -11,6 +11,10 @@ defineProps({
     type: Function as PropType<(e: MouseEvent) => void>,
     required: true,
   },
+  openModal: {
+    type: Function as PropType<(e: MouseEvent) => void>,
+    required: true,
+  },
 })
 </script>
 <template>
@@ -24,7 +28,7 @@ defineProps({
       v-if="openMenu"
       class="/* Layout */ relative max-sm:h-full max-sm:absolute max-sm:top-0 max-sm:left-0 sm:mr-2.5 sm:w-[320px] md:w-100 lg:w-full max-sm:rounded-t-4xl max-sm:bg-white /* Border */ md:border-r-2 md:border-white"
     >
-      <ul class="/* Layout */ flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3">
+      <ul class="/* Layout */ flex gap-x-5 flex-wrap xs:justify-center max-sm:mt-3 pr-2">
         <li class="li-item-nav" id="home" @click="(e) => chooseActiveBlock(e)">
           <a href="#" class="a-li-item-nav">
             <img src="/icons/home.png" alt="home" class="w-[20px] inline" /> Главная
@@ -50,7 +54,7 @@ defineProps({
             <img src="/icons/agenda.png" alt="agenda" class="w-[20px] inline" /> Контакты
           </a>
         </li>
-        <li class="li-item-nav">
+        <li class="li-item-nav" id="modal" @click="openModal">
           <a href="#" class="a-li-item-nav">Войти</a>
         </li>
       </ul>

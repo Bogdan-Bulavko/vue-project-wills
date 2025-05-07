@@ -1,9 +1,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import type { Ref } from 'vue'
+
+import ModalItem from './ModalItem.vue'
 import HeaderItem from './HeaderItem.vue'
 
 const activeBlock: Ref<string> = ref('home')
+const activeModal: Ref<boolean> = ref(false)
+
+const openModal = (): void => {
+  activeModal.value = !activeModal.value
+}
 
 const chooseActiveBlock = (e: Event): void => {
   const target = e.currentTarget as HTMLElement
@@ -13,7 +20,12 @@ const chooseActiveBlock = (e: Event): void => {
 </script>
 
 <template>
-  <HeaderItem :chooseActiveBlock="chooseActiveBlock" />
+  <ModalItem :activeModal="activeModal" :openModal="openModal" />
+  <HeaderItem
+    :chooseActiveBlock="chooseActiveBlock"
+    :activeModal="activeModal"
+    :openModal="openModal"
+  />
   <div
     class="/* Layout */ max-sm:h-dvh h-[510px] relative rounded-b-4xl overflow-x-hidden /* Border */ border-x-2 border-b-2 border-white /* Background */ bg-[#ffffff80]"
   >

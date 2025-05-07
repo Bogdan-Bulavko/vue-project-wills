@@ -32,3 +32,9 @@ body {
 .a-li-item-nav {
   @apply p-2.5 max-[350px]:p-1.5 flex gap-2 items-center rounded-2xl focus:bg-white max-sm:focus:bg-peach max-sm:focus:text-white transition duration-400;
 }
+
+/* Modal */
+
+.input-modal {
+  @apply /* Layout */ ml-3 px-2 rounded-4xl /* Border */ border border-gray;
+}

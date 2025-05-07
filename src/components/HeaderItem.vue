@@ -9,6 +9,10 @@ defineProps({
     type: Function as PropType<(e: MouseEvent) => void>,
     required: true,
   },
+  openModal: {
+    type: Function as PropType<(e: MouseEvent) => void>,
+    required: true,
+  },
 })
 
 const openMenu: Ref<boolean> = ref(false)
@@ -37,6 +41,7 @@ const changeCheckedOpenMenu = (): void => {
           :openMenu="openMenu"
           :changeCheckedOpenMenu="changeCheckedOpenMenu"
           :chooseActiveBlock="chooseActiveBlock"
+          :openModal="openModal"
         />
       </div>
       <div class="text-center cursor-pointer pl-5" @click="changeCheckedOpenMenu">
